@@ -12,6 +12,10 @@ An extension to make awesome label view in your view component.
   <tr>
 </table>
 
+# More extensions
+
+<a href="https://github.com/jewelshkjony?tab=repositories"> See more extensions </a>
+
 ## Extension specifications:
 <img src="https://github.com/jewelshkjony/LabelView/raw/main/assets/download.png"/> <a href="https://github.com/jewelshkjony/LabelView/raw/main/out/com.jewel.labelview.aix">com.jewel.labelview.aix</a> (7.88 KB) \
 <b>Version:</b> 1.0\
