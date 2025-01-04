@@ -231,6 +231,7 @@ public class ViewLabel extends View {
         return (int) (dpValue * scale + 0.5f);
     }
 
+    @SuppressWarnings("deprecation")
     public float sp2px(float spValue) {
         final float scale = getContext().getResources().getDisplayMetrics().scaledDensity;
         return spValue * scale;

@@ -1,15 +1,4 @@
-# Add any ProGuard configurations specific to this
-# extension here.
-
--keep public class com.jewel.labelview.LabelView {
-    public *;
-}
--keeppackagenames gnu.kawa**, gnu.expr**
-
--optimizationpasses 5
--allowaccessmodification
--mergeinterfacesaggressively
-
--repackageclasses 'com/jewel/labelview/repack'
--flattenpackagehierarchy
--dontpreverify
+# Repackages all the optimized classes into com.jewel.labelview.repackaged package in resulting
+# AIX. Repackaging is necessary to avoid clashes with the other extensions that
+# might be using same libraries as you.
+-repackageclasses com.jewel.labelview.repacked
