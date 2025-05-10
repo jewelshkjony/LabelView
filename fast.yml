@@ -40,6 +40,9 @@ desugar_dex: false
 # Extension assets. [Should be present into assets directory]
 # assets:
 # - my-awesome-asset.anything
+
+# Enable to generate docs in Markdown
+gen_docs: true
 # Enable to increment the version number of each component during build.
 auto_version: false
 # Enable to remove @annotations from the extension.
