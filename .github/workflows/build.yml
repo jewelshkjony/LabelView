@@ -2,6 +2,11 @@ name: fast build
 
 on:
   workflow_dispatch:
+    inputs:
+      build_args:
+        description: 'Arguments (optional)'
+        required: false
+        default: ''
   pull_request:
     branches: [ main ]
 
@@ -23,16 +28,16 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    - name: Download and extract fast-cli
+    - name: Downloading fast-cli
       run: |
         wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
         unzip -q fast.zip -d fast-cli-temp
         rm fast.zip
         
     - name: Running fast build
-      run: java -jar fast-cli-temp/fast.jar build -r -dir .
+      run: java -jar fast-cli-temp/fast.jar build -dir . ${{ github.event.inputs.build_args }}
         
-    - name: Cleanup fast-cli files
+    - name: Cleanup fast-cli
       run: rm -rf fast-cli-temp
         
     - name: Commit build results
