@@ -9,7 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Required for pushing changes
+      # Required for pushing changes
+      contents: write
 
     steps:
     - name: Checkout repository
@@ -39,17 +40,6 @@ jobs:
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        
-        # Get branch name or use main as fallback
-        BRANCH_NAME=${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}
-        git checkout -b $BRANCH_NAME
-        
         git add out/
-        
-        # Use proper push command format
-        if ! git diff --staged --quiet; then
-          git commit -m "Automated build output [skip ci]"
-          git push origin HEAD:$BRANCH_NAME
-        else
-          echo "No changes to commit"
-        fi
+        git commit -m "Manual build output [skip ci]" || echo "No changes to commit"
+        git push
