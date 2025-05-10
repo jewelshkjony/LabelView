@@ -28,16 +28,16 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    - name: Downloading fast-cli
+    - name: Set up FAST-CLI
       run: |
         wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
         unzip -q fast.zip -d fast-cli-temp
         rm fast.zip
         
-    - name: Running fast build
+    - name: Building project
       run: java -jar fast-cli-temp/fast.jar build -dir . ${{ github.event.inputs.build_args }}
         
-    - name: Cleanup fast-cli
+    - name: Cleanup FAST-CLI
       run: rm -rf fast-cli-temp
         
     - name: Commit build results
