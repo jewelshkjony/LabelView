@@ -1,4 +1,4 @@
-name: Build using FAST
+name: Default Fast Build
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
         unzip -q fast.zip
         rm fast.zip
         
-    - name: Build with fast-cli
+    - name: Running fast build
       run: java -jar fast.jar build -dir .
       
     - name: Commit output to repository
