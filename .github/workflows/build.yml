@@ -8,13 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write  # Required for pushing changes
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Needed for git history
-      
+        fetch-depth: 0
+        # For private repos, add PAT token:
+        # token: ${{ secrets.PAT_TOKEN }}
+
     - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
@@ -23,16 +27,29 @@ jobs:
         
     - name: Download fast-cli
       run: |
-        wget https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
-        unzip fast.zip
+        wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
+        unzip -q fast.zip
+        rm fast.zip
         
     - name: Build with fast-cli
       run: java -jar fast.jar build -dir .
       
     - name: Commit output to repository
+      if: github.event_name == 'workflow_dispatch'  # Only run on manual trigger
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
+        
+        # Get branch name or use main as fallback
+        BRANCH_NAME=${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}
+        git checkout -b $BRANCH_NAME
+        
         git add out/
-        git commit -m "Automated build output [skip ci]" || echo "No changes to commit"
-        git push
+        
+        # Use proper push command format
+        if ! git diff --staged --quiet; then
+          git commit -m "Automated build output [skip ci]"
+          git push origin HEAD:$BRANCH_NAME
+        else
+          echo "No changes to commit"
+        fi
