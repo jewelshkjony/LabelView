@@ -1,7 +1,9 @@
-name: Build and Commit Output
+name: Build using FAST
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
