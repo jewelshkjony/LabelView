@@ -7,7 +7,7 @@ Developed by Jewel Shikder Jony<br><br><a href='https://t.me/jewelshkjony/' targ
 ## 📝 Specifications
 * **
 📦 **Package:** com.jewel.labelview
-💾 **Size:** 12.27 KB
+💾 **Size:** 12.25 KB
 ⚙️ **Version:** 1.1
 📱 **Minimum API Level:** 7
 📅 **Updated On:** [date=2025-05-10 timezone="Etc/UTC"]
