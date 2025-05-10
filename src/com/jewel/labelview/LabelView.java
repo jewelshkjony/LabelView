@@ -12,7 +12,7 @@ import android.content.Context;
 import android.view.ViewGroup;
 
 @DesignerComponent(
-  version = 5,
+  version = 6,
   versionName = "1.1",
   description = "Developed by Jewel Shikder Jony<br><br>"
     + "<a href='https://t.me/jewelshkjony/' target='_blank'>Telegram</a> | "
