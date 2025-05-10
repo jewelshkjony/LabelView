@@ -6,18 +6,18 @@ min_sdk: 7
 # If enabled, extension will be optimized using ProGuard.
 proguard: true
 # If enabled, extension will be optimized using R8.
-R8: true
+# R8: true
 # If enabled, Kotlin Standard Libraries will be included with the extension.
-kotlin: false
+# kotlin: false
 # Kotlin Compiler version.
-kotlin_version: 1.9.24
+# kotlin_version: 1.9.24
 
 # If enabled, you will be able to use Java 8 language features in your extension source code.
-desugar_sources: false
+desugar_sources: true
 # Enable it, if any of your dependencies use Java 8 language features.
 desugar_deps: false
 # If enabled, the D8 tool will generate desugared jar (classes.dex)
-desugar_dex: false
+desugar_dex: true
 
 # Default repositories are Maven Central, Google Maven, JCenter and JitPack.
 # If the library you want to use is not available in these repositories, add here by specifying their URLs.
