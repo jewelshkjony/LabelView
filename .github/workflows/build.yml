@@ -9,7 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      # Required for pushing changes
       contents: write
 
     steps:
@@ -24,20 +23,23 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    - name: Download fast-cli
+    - name: Download and extract fast-cli
       run: |
         wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
-        unzip -q fast.zip
+        unzip -q fast.zip -d fast-cli-temp  # Extract to temporary directory
         rm fast.zip
         
     - name: Running fast build
-      run: java -jar fast.jar build -dir .
-      
-    - name: Commit output to repository
-      if: github.event_name == 'workflow_dispatch'  # Only run on manual trigger
+      run: java -jar fast-cli-temp/fast.jar build -dir .  # Reference from temp dir
+        
+    - name: Cleanup fast-cli files
+      run: rm -rf fast-cli-temp  # Remove temporary directory before commit
+        
+    - name: Commit build results
+      if: github.event_name == 'workflow_dispatch'
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add .
-        git commit -m "Auto-commit build changes [fast-cli]"
+        git commit -m "Auto-commit build changes [fast-cli]" || echo "No changes to commit"
         git push
