@@ -1,0 +1,84 @@
+Fast is initialized.
+FAST Version: 3.2.2 05.05.25.12.36
+OS Name: Linux
+OS Version: 6.11.0-1013-azure
+Architecture: amd64
+Username: runner
+User Home: /home/runner
+Working Directory: /home/runner/work/LabelView/LabelView
+Got FAST_HOME by finding class.
+FAST_HOME: /home/runner/work/LabelView/LabelView
+Premium Status: false
+Runtime Memory: 3998MB
+D8 version: 8.9.35
+R8 version: 8.9.35
+JRE Version: 11.0.27
+JRE Specification: 11
+JRE Home: /usr/lib/jvm/temurin-11-jdk-amd64
+Path Separator: :
+File Separator: /
+Line Separator: 
+
+fast build initialized.
+PROJECT_DIR: .
+fast.yml is found at: /home/runner/work/LabelView/LabelView/./fast.yml
+Got the JAVA_HOME from environment variable.
+JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.27-6/x64
+KOTLIN_HOME: /home/runner/work/LabelView/LabelView/lib/compiler/1.9.24/kotlinc
+AndroidManifest.xml is found at: /home/runner/work/LabelView/LabelView/./src/AndroidManifest.xml
+Package name is: com.jewel.labelview
+Checking the availability of .kt files.
+Getting provided libraries.
+Got 75 libraries.
+Added 0 local runtime libraries.
+Added 0 local compile-time libraries.
+Increasing components version.
+Compiling java helper classes.
+Found 2 sources.
+Added custom bootclasspath to target Java 8.
+Successfully created javac arguments
+Calling javac commands.
+javac is successfully executed.
+Checking the availability of .java file.
+Compiling java classes with java helper sources as classpath.
+Compiling java classes.
+Found 4 sources.
+Note: Wrote file file:///home/runner/work/LabelView/LabelView/.fast/classes/simple_components.json
+Note: Wrote file file:///home/runner/work/LabelView/LabelView/.fast/classes/simple_components.txt
+Note: Wrote file file:///home/runner/work/LabelView/LabelView/.fast/classes/simple_components_build_info.json
+Making raw files.
+Copying assets.
+Created aiwebres dir at raw.
+Reading AndroidManifest.xml
+Packaging compiled classes.
+Attach AARs Libs if provided
+No aars were provided to attach.
+Running naming convention verifier.
+Generating docs for extension
+Deleting previously generated blocks if exists.
+Generating blockly images.
+Generating CreateLabel method of LabelView for appinventor
+Generating CreateLabel method of LabelView for kodular
+Generating CreateLabel method of LabelView for niotron
+Generating CreateLabel method of LabelView for androidbuilder
+Converting 4 blockly images to PNGs.
+Converting CreateLabel_Method.svg to PNG.
+Blockly images has been successfully converted to PNGs.
+Writing docs for single component extension.
+Removing annotations from sources.
+Unjaring dependencies.
+Generating AndroidRuntime.jar
+Merging compiled sources and required deps.
+Will run the proguard task if -r passed.
+Moving the runtime jar to the desired dir of raw..
+Running the dexing task.
+Generating DEX bytecode.
+Using the d8_11+.jar instead of d8.jar
+Successfully created dexing arguments
+Calling dexing commands.
+D8 is successfully executed.
+Packaging the aix at: /home/runner/work/LabelView/LabelView/./out/com.jewel.labelview.aix
+Setting extension size on docs. Size is: 12.25 KB
+Saving the docs to out/extension.txt
+Clearing the written docs.
+BUILD SUCCESSFUL
