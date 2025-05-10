@@ -1,4 +1,4 @@
-name: fast build
+name: fast build with args
 
 on:
   workflow_dispatch:
