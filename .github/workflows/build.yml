@@ -35,7 +35,7 @@ jobs:
         rm fast.zip
         
     - name: Building project
-      run: java -jar fast-cli-temp/fast.jar build -dir . ${{ github.event.inputs.build_args }}
+      run: java -jar fast-cli-temp/fast.jar sync build -dir . ${{ github.event.inputs.build_args }}
         
     - name: Cleanup FAST-CLI
       run: rm -rf fast-cli-temp
