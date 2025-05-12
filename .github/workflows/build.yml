@@ -3,6 +3,15 @@ name: fast build
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: 'Build Mode'
+        required: true
+        default: 'default'
+        type: choice
+        options:
+          - default
+          - r
+          - s
       build_args:
         description: 'Arguments (optional)'
         required: false
