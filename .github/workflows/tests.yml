@@ -1,14 +1,18 @@
 name: fast tests
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [ main ]
 
 jobs:
-  setup:
+  fast-test:
     runs-on: ubuntu-latest
-    outputs:
-      artifact-name: fast-cli
+    strategy:
+      matrix:
+        mode: [default, r, s]  # Test variations
+    name: FAST Build (${{ matrix.mode }} mode)
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -27,51 +31,16 @@ jobs:
         unzip -q fast.zip -d fast-cli-temp
         rm fast.zip
 
-    - name: Cache FAST-CLI and Source
-      uses: actions/upload-artifact@v4
-      with:
-        name: fast-cli
-        path: |
-          fast-cli-temp/
-          ./
+    - name: FAST build - ${{ matrix.mode }}
+      run: |
+        CMD="java -jar fast-cli-temp/fast.jar sync build -dir ."
+        if [[ "${{ matrix.mode }}" == "r" ]]; then
+          CMD+=" -r"
+        elif [[ "${{ matrix.mode }}" == "s" ]]; then
+          CMD+=" -s"
+        fi
+        echo "Running: $CMD"
+        eval "$CMD"
 
-  test-default:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/download-artifact@v4
-      with:
-        name: fast-cli
-
-    - name: FAST Build (default)
-      run: java -jar fast-cli-temp/fast.jar sync build -dir .
-
-  test-r-flag:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/download-artifact@v4
-      with:
-        name: fast-cli
-
-    - name: FAST Build (-r flag)
-      run: java -jar fast-cli-temp/fast.jar sync build -dir . -r
-
-  test-s-flag:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/download-artifact@v4
-      with:
-        name: fast-cli
-
-    - name: FAST Build (-s flag)
-      run: java -jar fast-cli-temp/fast.jar sync build -dir . -s
-
-  cleanup:
-    needs: [test-default, test-r-flag, test-s-flag]
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
     - name: Cleanup FAST-CLI
       run: rm -rf fast-cli-temp
