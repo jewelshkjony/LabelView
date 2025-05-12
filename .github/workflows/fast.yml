@@ -43,19 +43,15 @@ jobs:
 
     - name: Building project
       run: |
-        MODE="${{ github.event.inputs.mode }}"
-        EXTRA_ARGS="${{ github.event.inputs.build_args }}"
-        CMD="java -jar fast-cli-temp/fast.jar sync build -dir ."
-
-        if [[ "$MODE" == "ProGuard" ]]; then
-          CMD="$CMD -r"
-        elif [[ "$MODE" == "R8" ]]; then
-          CMD="$CMD -s"
-        fi
-
-        CMD="$CMD $EXTRA_ARGS"
-        echo "Running: $CMD"
-        eval "$CMD"
+        bash -c '
+          CMD="java -jar fast-cli-temp/fast.jar sync build -dir ."
+          case "${{ github.event.inputs.mode }}" in
+            ProGuard) CMD="$CMD -r" ;;
+            R8) CMD="$CMD -s" ;;
+          esac
+          CMD="$CMD ${{ github.event.inputs.build_args }}"
+          eval "$CMD"
+        '
 
     - name: Cleanup FAST-CLI
       run: rm -rf fast-cli-temp
