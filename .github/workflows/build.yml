@@ -28,7 +28,7 @@ jobs:
         
     - name: Set up FAST-CLI
       run: |
-        wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
+        wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.3.0/fast.zip
         unzip -q fast.zip -d fast-cli-temp
         rm fast.zip
         
