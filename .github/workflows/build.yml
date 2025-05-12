@@ -7,8 +7,6 @@ on:
         description: 'Arguments (optional)'
         required: false
         default: ''
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
