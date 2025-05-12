@@ -19,10 +19,10 @@ desugar_deps: false
 # If enabled, the D8 tool will generate desugared jar (classes.dex)
 desugar_dex: true
 
-# Default repositories are Maven Central, Google Maven, JCenter and JitPack.
+# Default repositories are LocalMaven, Maven Central & Google Maven.
 # If the library you want to use is not available in these repositories, add here by specifying their URLs.
 # repositories:
-# - https://repo.spring.io/plugins-release/
+# - https://jitpack.io/
 
 # Extension dependencies [JAR & AAR Should be present into deps directory]
 # dependencies:
