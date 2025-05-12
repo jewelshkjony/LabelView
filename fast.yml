@@ -6,7 +6,7 @@ min_sdk: 7
 # If enabled, extension will be optimized using ProGuard.
 proguard: true
 # If enabled, extension will be optimized using R8.
-# R8: true
+R8: true
 # If enabled, Kotlin Standard Libraries will be included with the extension.
 # kotlin: false
 # Kotlin Compiler version.
@@ -26,16 +26,15 @@ desugar_dex: true
 
 # Extension dependencies [JAR & AAR Should be present into deps directory]
 # dependencies:
-# - mylibrary.jar
-# - androidx.viewpager2:viewpager2:1.0.0
+# - groupId:artifactId:version
 
 # Define compile-time dependencies only [Remote only]
 # compile_time:
-# - androidx.browser:browser:1.0.0
+# - groupId:artifactId:version
 
 # Define dependencies those are should be skipped during resolving. [Remote only]
 # excludes:
-# - androidx.tracing:tracing:1.0.0
+# - groupId:artifactId:version
 
 # Extension assets. [Should be present into assets directory]
 # assets:
