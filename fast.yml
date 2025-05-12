@@ -38,7 +38,7 @@ dependencies:
 
 # Extension assets. [Should be present into assets directory]
 # assets:
-# - my-awesome-asset.anything
+# - fileName.type
 
 # Enable to generate docs in Markdown
 gen_docs: true
