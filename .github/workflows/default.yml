@@ -1,4 +1,4 @@
-name: default build
+name: Default Build
 
 on:
   pull_request:
