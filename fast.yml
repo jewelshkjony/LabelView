@@ -25,8 +25,8 @@ desugar_dex: true
 # - https://jitpack.io/
 
 # Extension dependencies [JAR & AAR Should be present into deps directory]
-dependencies:
-- com.startapp:inapp-sdk:5.2.0
+# dependencies:
+# - groupId:artifactId:version
 
 # Define compile-time dependencies only [Remote only]
 # compile_time:
