@@ -1,0 +1,77 @@
+name: fast tests
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      artifact-name: fast-cli
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+
+    - name: Set up FAST-CLI
+      run: |
+        wget -q https://github.com/jewelshkjony/fast-cli/releases/download/v3.2.2/fast.zip
+        unzip -q fast.zip -d fast-cli-temp
+        rm fast.zip
+
+    - name: Cache FAST-CLI and Source
+      uses: actions/upload-artifact@v4
+      with:
+        name: fast-cli
+        path: |
+          fast-cli-temp/
+          ./
+
+  test-default:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: fast-cli
+
+    - name: FAST Build (default)
+      run: java -jar fast-cli-temp/fast.jar sync build -dir .
+
+  test-r-flag:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: fast-cli
+
+    - name: FAST Build (-r flag)
+      run: java -jar fast-cli-temp/fast.jar sync build -dir . -r
+
+  test-s-flag:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: fast-cli
+
+    - name: FAST Build (-s flag)
+      run: java -jar fast-cli-temp/fast.jar sync build -dir . -s
+
+  cleanup:
+    needs: [test-default, test-r-flag, test-s-flag]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+    - name: Cleanup FAST-CLI
+      run: rm -rf fast-cli-temp
