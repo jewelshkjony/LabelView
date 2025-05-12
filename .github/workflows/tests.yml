@@ -32,15 +32,15 @@ jobs:
         rm fast.zip
 
     - name: FAST build - ${{ matrix.mode }}
+      shell: bash
       run: |
-        CMD="java -jar fast-cli-temp/fast.jar sync build -dir ."
-        if [[ "${{ matrix.mode }}" == "r" ]]; then
-          CMD+=" -r"
-        elif [[ "${{ matrix.mode }}" == "s" ]]; then
-          CMD+=" -s"
-        fi
-        echo "Running: $CMD"
-        eval "$CMD"
+       if [[ "${{ matrix.mode }}" == "r" ]]; then
+        java -jar fast-cli-temp/fast.jar sync build -dir . -r
+       elif [[ "${{ matrix.mode }}" == "s" ]]; then
+        java -jar fast-cli-temp/fast.jar sync build -dir . -s
+       else
+        java -jar fast-cli-temp/fast.jar sync build -dir .
+       fi
 
     - name: Cleanup FAST-CLI
       run: rm -rf fast-cli-temp
