@@ -10,7 +10,7 @@ Developed by Jewel Shikder Jony<br><br><a href='https://t.me/jewelshkjony/' targ
 💾 **Size:** 10.58 KB
 ⚙️ **Version:** 1.1
 📱 **Minimum API Level:** 7
-📅 **Updated On:** [date=2025-05-11 timezone="Etc/UTC"]
+📅 **Updated On:** [date=2025-05-12 timezone="Etc/UTC"]
 🔗 **Help URL:** [Learn more](https://github.com/jewelshkjony/LabelView)
 ⚖️ **License:** [Terms & Conditions](https://github.com/jewelshkjony/LabelView/blob/main/LICENSE)
 💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-extensions/129103?u=jewel) <small><mark>v3.2.2</mark></small>
