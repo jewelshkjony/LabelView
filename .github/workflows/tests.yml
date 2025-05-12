@@ -1,4 +1,4 @@
-name: fast tests
+name: fast build tests
 
 on:
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
         unzip -q fast.zip -d fast-cli-temp
         rm fast.zip
 
-    - name: FAST build - ${{ matrix.mode }}
+    - name: fast build - ${{ matrix.mode }}
       shell: bash
       run: |
        if [[ "${{ matrix.mode }}" == "r" ]]; then
