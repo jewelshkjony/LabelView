@@ -1,17 +1,17 @@
 <div align="center">
 <h1><kbd>🧩 LabelView</kbd></h1>
 An extension for MIT App Inventor 2.<br>
-Developed by Jewel Shikder Jony<br><br><a href='https://t.me/jewelshkjony/' target='_blank'>Telegram</a> | <a href='https://wa.me/8801775668913' target='_blank'>WhatsApp</a><br><a href='https://fb.com/jewelshkjony/' target='_blank'>Facebook</a> | <a href='https://m.me/jewelshkjony/' target='_blank'>Messenger</a><br><a href='https://m.youtube.com/c/JewelShikderJony?sub_confirmation=1' target='_blank'>YouTube</a> <a href='https://buymeacoffee.com/jewelshkjony/extras' target='_blank'> 🧩 Aix Store</a><br><a href='https://github.com/jewelshkjony/Extensions/blob/main/LICENSE.md#terms-and-conditions-for-the-extension' target='_blank'><small><u>⚖️ Terms & Conditions</u></small></a>
+Developed by Jewel Shikder Jony<br><br><a href='https://t.me/jewelshkjony/' target='_blank'>Telegram</a> | <a href='https://wa.me/8801775668913' target='_blank'>WhatsApp</a><br><a href='https://fb.com/jewelshkjony/' target='_blank'>Facebook</a> | <a href='https://m.me/jewelshkjony/' target='_blank'>Messenger</a><br><a href='https://m.youtube.com/c/JewelShikderJony?sub_confirmation=1' target='_blank'>YouTube</a> <a href='https://buymeacoffee.com/jewelshkjony/extras' target='_blank'> ? Aix Store</a><br><a href='https://github.com/jewelshkjony/Extensions/blob/main/LICENSE.md#terms-and-conditions-for-the-extension' target='_blank'><small><u>?? Terms & Conditions</u></small></a>
 </div>
 
 ## 📝 Specifications
 * **
 📦 **Package:** com.jewel.labelview
-💾 **Size:** 10.70 KB
+💾 **Size:** 10.74 KB
 ⚙️ **Version:** 1.1
 📱 **Minimum API Level:** 14
-📅 **Updated On:** [date=2025-09-07 timezone="Asia/Dhaka"]
-💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-publish-extensions/129103?u=jewel) <small><mark>v4.5.0-premium</mark></small>
+📅 **Updated On:** [date=2025-09-27 timezone="Asia/Dhaka"]
+💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-publish-extensions/129103?u=jewel) <small><mark>v5.1.0-premium</mark></small>
 
 ## <kbd>Method:</kbd>
 **LabelView** has total 1 method.

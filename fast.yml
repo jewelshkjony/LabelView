@@ -1,4 +1,4 @@
-# Project version 4.5.0 07.09.25.13.08+7 Sep 25
+# Project version 5.1.0 29.09.25.13.08+7 Sep 25
 # The name of the extension developer
 author: JEWEL
 
@@ -11,21 +11,14 @@ R8: true
 # If enabled, the D8 tool will generate desugared jar (classes.dex)
 desugar_dex: true
 
-# Default repositories are Maven Central, Google Maven, LocalMaven.
-# If the library you want to use is not available in these repositories, add here by specifying their URLs.
-# repositories:
-# - https://jitpack.io/
-
-# Extension dependencies [JAR & AAR Should be present into deps directory]
-# dependencies:
-# - myLibrary.jar
-
 # Extension assets. [Should be present into assets directory]
 # assets:
 # - my-awesome-asset.anything
 
 # Enable to generate documentation for your extension in Markdown during build.
 gen_docs: true
+# Enable to generate blocks with shadow blocks.
+shadow_blocks: true
 # Enable to increment the version number of each component during build.
 auto_version: false
 # Enable to remove @annotations from the extension.

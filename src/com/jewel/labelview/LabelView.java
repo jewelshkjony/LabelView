@@ -4,11 +4,12 @@ import android.content.Context;
 import android.view.ViewGroup;
 
 import com.google.appinventor.components.annotations.DesignerComponent;
+import com.google.appinventor.components.annotations.IsColor;
+import com.google.appinventor.components.annotations.Shadow;
 import com.google.appinventor.components.annotations.SimpleFunction;
 import com.google.appinventor.components.runtime.AndroidNonvisibleComponent;
 import com.google.appinventor.components.runtime.ComponentContainer;
 import com.google.appinventor.components.runtime.HVArrangement;
-
 import com.jewel.labelview.helpers.LabelViewDirection;
 import com.jewel.labelview.helpers.LabelViewStyle;
 
@@ -31,9 +32,11 @@ public class LabelView extends AndroidNonvisibleComponent {
 
   @SimpleFunction("A simple label control supports custom text size,\n"
       + "spacing (Top/Center/Bottom Padding), background color, and direction, etc.")
-  public void CreateLabel(HVArrangement arrangement, String text, float textSize, LabelViewStyle textStyle,
-      int textColor, String number, LabelViewStyle numberStyle, float numberSize, int numberColor,
-      LabelViewDirection direction, float topPadding, float centerPadding, float bottomPadding, int backgroundColor) {
+  public void CreateLabel(@Shadow("HorizontalArrangement1") HVArrangement arrangement, @Shadow("MyLabel") String text,
+      @Shadow("8") float textSize, LabelViewStyle textStyle, @IsColor("white") int textColor,
+      @Shadow("01") String number, LabelViewStyle numberStyle, @Shadow("11") float numberSize,
+      @IsColor("blue") int numberColor, LabelViewDirection direction, @Shadow("7") float topPadding,
+      @Shadow("3") float centerPadding, @Shadow("3") float bottomPadding, @IsColor("#000000") int backgroundColor) {
     ViewGroup viewGroup = (ViewGroup) arrangement.getView();
     ViewLabel labelView = new ViewLabel(context);
     labelView.setText(text);
